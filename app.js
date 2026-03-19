@@ -17,6 +17,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(sessionMiddleware);
 
+app.get("/", (req, res) => {
+  res.redirect("/petal/notes/home");
+});
+
 app.use("/petal/auth", authRoutes);
 app.use("/petal/notes", notesRoutes);
 
