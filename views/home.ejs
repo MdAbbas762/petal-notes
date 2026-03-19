@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="/images/app-logo.png" type="image/png" />
+    <link rel="stylesheet" href="/css/home.css">
+    <title>Petal Notes</title>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="#home" class="nav-logo">
+            <div class="nav-logo-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+            <span class="nav-logo-name">Petal</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-item active">Home</a></li>
+            <li><a href="#features" class="nav-item">Features</a></li>
+            <li><a href="#about" class="nav-item">About</a></li>
+        </ul>
+
+        <div class="nav-auth">
+            <a href="/petal/auth/login" class="btn-login">Login</a>
+            <a href="/petal/auth/register" class="btn-signup">Sign up</a>
+        </div>
+
+        <button class="hamburger" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars" id="menuIcon"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home" class="nav-item active"onclick="closeMenu()">Home</a>
+        <a href="#features" class="nav-item" onclick="closeMenu()">Features</a>
+        <a href="#about" class="nav-item" onclick="closeMenu()">About</a>
+        <div class="mobile-divider"></div>
+        <a href="/petal/auth/login" onclick="closeMenu()">Login</a>
+        <a href="/petal/auth/register" onclick="closeMenu()">Sign up</a>
+    </div>
+
+    <!-- Hero -->
+    <section id="home">
+        <div class="section-inner">
+            <div class="hero-layout">
+                <div class="hero-text">
+                    <span class="section-label">Welcome to Petal</span>
+                    <h1>Your thoughts,<br><em>beautifully</em> kept.</h1>
+                    <p>Petal is a calm, focused notes app designed to help you capture ideas, organise your work, and
+                        journal your days, all in one gentle, distraction-free space.</p>
+                    <div class="hero-actions">
+                        <a href="/petal/auth/register" class="btn-primary"><i class="fa-solid fa-feather"></i> Start for free</a>
+                        <a href="#features" class="btn-ghost">See features <i class="fa-solid fa-arrow-down"></i></a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="/images/home-image.png" alt="Get start with petal">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features">
+        <div class="section-inner">
+            <div class="features-header">
+                <span class="section-label">Features</span>
+                <h2>Everything you need,<br>in one place.</h2>
+            </div>
+            <div class="features-grid">
+
+                <div class="feature-card">
+                    <div class="feature-icon rose"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3>Smart Collections</h3>
+                    <p>Organise notes into Work, Personal, and Ideas collections. Find exactly what you need, exactly when you need it.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon blush"><i class="fa-solid fa-thumbtack"></i></div>
+                    <h3>Pin What Matters</h3>
+                    <p>Keep your most important notes front and centre. Pin them to the top so they're never buried under newer entries.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon warm"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <h3>Instant Search</h3>
+                    <p>Find any note in seconds. Search across all your notes by title or content, no waiting, no digging.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon rose"><i class="fa-solid fa-pen-nib"></i></div>
+                    <h3>Clean Writing Space</h3>
+                    <p>A distraction-free editor that gets out of your way. Just you and your words, no clutter, no noise.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon blush"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Your Notes, Private</h3>
+                    <p>Your data belongs to you. Notes are securely stored and never shared or sold to anyone, ever.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon warm"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <h3>Works Everywhere</h3>
+                    <p>Fully responsive across phones, tablets, and desktops. Your notes follow you wherever you go.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="section-inner">
+            <div class="about-layout">
+                <div class="about-text">
+                    <span class="section-label">Our Story</span>
+                    <h2>Born from a cluttered notes app.</h2>
+                    <p>Petal started as a personal frustration. Like most people, we were juggling work tasks,
+                        half-written ideas, grocery lists, and journal entries all in one chaotic notes app, and slowly
+                        losing our minds.</p>
+                    <p>We wanted something that felt considered. A place that understood that a work meeting note and a
+                        personal reflection deserve different homes. So we built it, a notes app with gentle structure,
+                        calm design, and just enough organisation to bring peace to the chaos.</p>
+                    <p>Petal is for anyone who thinks in writing. Whether you're a planner, a dreamer, a professional,
+                        or just someone who needs to remember things, there's a quiet corner here for you.</p>
+                </div>
+                <div class="about-visual">
+                    <div class="about-icon-wrap">
+                        <i class="fa-regular fa-lightbulb"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <a href="#home" class="footer-logo">
+                <div class="footer-logo-icon"><i class="fa-solid fa-feather"></i></div>
+                <span class="footer-logo-name">Petal</span>
+            </a>
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <p class="footer-copy">© 2026 Petal Notes. Made with care.</p>
+        </div>
+    </footer>
+
+    <script src="/js/home.js"></script>
+</body>
+
+</html>

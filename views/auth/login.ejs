@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Jost:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="/images/app-logo.png" type="image/png" />
+    <link rel="stylesheet" href="/css/auth.css">
+    <title>Petal Notes – Login</title>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <div class="logo">
+            <div class="logo-icon">
+                <a href="/petal/notes/home"><i class="fa-solid fa-feather-pointed"></i></a>
+            </div>
+            <span class="app-name">Petal</span>
+        </div>
+
+        <p class="tagline tagline-size">Welcome back</p>
+
+        <div class="error-box <%= error ? 'error-box-show' : '' %>">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span><%= error %></span>
+        </div>
+
+        <form action="/petal/auth/login" method="POST">
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="type here.." autocomplete="email" required />
+            </div>
+
+            <div class="field">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="type here.." autocomplete="current-password" required />
+            </div>
+
+            <button type="submit">Log In</button>
+        </form>
+
+        <div class="divider">or</div>
+
+        <p class="signup-text">Don't have an account? <a href="/petal/auth/register">Sign up free</a></p>
+
+    </div>
+
+</body>
+
+</html>

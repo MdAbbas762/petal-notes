@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="/images/app-logo.png" type="image/png" />
+    <link rel="stylesheet" href="/css/notes.css">
+    <title>Petal Notes — Personal Collection</title>
+</head>
+
+<body>
+
+    <!-- Desktop Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+            <span class="app-name">Petal</span>
+        </div>
+
+        <div class="sidebar-section-label">Menu</div>
+        <a href="/petal/notes/dashboard" class="nav-item"><i class="fa-solid fa-house"></i> Dashboard</a>
+        <a href="/petal/notes/pinned" class="nav-item"><i class="fa-solid fa-thumbtack"></i> Pinned</a>
+
+        <div class="sidebar-section-label">Collections</div>
+        <a href="/petal/notes/work" class="nav-item"><i class="fa-solid fa-briefcase"></i> Work</a>
+        <a href="#" class="nav-item active"><i class="fa-solid fa-heart"></i> Personal</a>
+        <a href="/petal/notes/ideas" class="nav-item"><i class="fa-solid fa-lightbulb"></i> Ideas</a>
+
+        <div class="sidebar-section-label">Other</div>
+        <a href="/petal/notes/trash" class="nav-item"><i class="fa-solid fa-trash"></i> Trash</a>
+        <form action="/petal/auth/logout" method="POST">
+            <button class="nav-item logout-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</button>
+        </form>
+
+        <div class="sidebar-footer">
+            <div class="user-info">
+
+                <% 
+                    const avatar1 = userName.charAt(0).toUpperCase();
+                %>
+
+                <div class="avatar"> <%= avatar1 %> </div>
+                <div>
+                    <div class="user-name"> <%= userName %> </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+
+    <!-- Mobile Drawer -->
+    <div class="drawer" id="drawer">
+        <button class="drawer-close" onclick="closeDrawer()"><i class="fa-solid fa-xmark"></i></button>
+
+        <div class="sidebar-logo">
+            <div class="logo-icon"><i class="fa-solid fa-feather"></i></div>
+            <span class="app-name">Petal</span>
+        </div>
+
+        <div class="sidebar-section-label">Menu</div>
+        <a href="/petal/notes/dashboard" class="nav-item" onclick="closeDrawer()"><i class="fa-solid fa-house"></i>Dashboard</a>
+        <a href="/petal/notes/pinned" class="nav-item" onclick="closeDrawer()"><i class="fa-solid fa-thumbtack"></i>Pinned</a>
+
+        <div class="sidebar-section-label">Collections</div>
+        <a href="/petal/notes/work" class="nav-item" onclick="closeDrawer()"><i class="fa-solid fa-briefcase"></i>Work</a>
+        <a href="#" class="nav-item active" onclick="closeDrawer()"><i class="fa-solid fa-heart"></i>Personal</a>
+        <a href="/petal/notes/ideas" class="nav-item" onclick="closeDrawer()"><i class="fa-solid fa-lightbulb"></i>Ideas</a>
+
+        <div class="sidebar-section-label">Other</div>
+        <a href="/petal/notes/trash" class="nav-item" onclick="closeDrawer()"><i class="fa-solid fa-trash"></i>Trash</a>
+        <form action="/petal/auth/logout" method="POST">
+            <button class="nav-item logout-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</button>
+        </form>
+
+        <div class="sidebar-footer">
+            <div class="user-info">
+
+                <% 
+                    const avatar2 = userName.charAt(0).toUpperCase();
+                %>
+
+                <div class="avatar"> <%= avatar2 %> </div>
+                <div>
+                    <div class="user-name"> <%= userName %> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+
+        <!-- Topbar -->
+        <header class="topbar">
+        
+            <button class="hamburger" onclick="openDrawer()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="topbar-title">A place for life's moments 💌</div>
+
+        </header>
+
+        <!-- Content -->
+        <div class="content">
+             
+            <!-- Notes grid -->
+            <div class="<%= hasNotes ? 'notes-grid' : 'empty-state' %>">
+
+                <% if (hasNotes) { %>
+                    
+                    <% userNotes.forEach(note => { %>
+
+                            <div class="note-card rose-accent <%= note.isPinned === true ? 'pinned' : '' %>" id="<%= note._id %>">
+
+                                <div class="note-pin <%= note.isPinned == true ? 'visible' : '' %>">
+                                    <i class="fa-solid fa-thumbtack"></i>
+                                </div>
+                                <div class="note-tag tag-rose"><%= note.category %></div>
+                                <div class="note-title"> <%= note.title %> </div>
+                                <div class="note-preview"> <%= note.description %> </div>
+                                <div class="note-footer">
+                                    <span class="note-date"> <%= note.updatedAt.toDateString() %> </span>
+                                    <div class="note-actions">
+                                        <form action="/petal/notes/<%= note._id %>/pin?redirectTo=/petal/notes/personal" method="POST">
+                                            <button class="icon-btn pin-btn"><i class="fa-solid fa-thumbtack"></i></button>
+                                        </form>
+                                        <a href="/petal/notes/<%= note._id %>/edit?redirectTo=/petal/notes/personal" class="icon-btn"><i class="fa-solid fa-pen"></i></a>
+                                        <button class="icon-btn delete-btn" id="<%= note.category %>"><i class="fa-solid fa-trash"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                    <% }); %>      
+
+                <% } else { %>
+                        <img src="/images/personal-empty-state.png" class="work-img" alt="Empty collection">
+                        <h1>Nothing personal saved</h1>
+                        <p>The small things deserve a place too.</p>
+                <% } %>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="deleteModalOverlay">
+        <div class="modal">
+            <div class="modal-icon">
+                <i class="fa-solid fa-trash"></i>
+            </div>
+            <h2>Delete Note</h2>
+            <p>Are you sure you want to move this note to trash?</p>
+            <div class="modal-actions">
+                <a href="/petal/notes/personal" class="btn-cancel" id="modalCancel">Cancel</a>
+                <form action="/petal/notes/trash?redirectTo=/petal/notes/personal" method="POST" id="trash-form">
+                    <button class="btn-delete" id="modalDelete">Move to Trash</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/js/notes.js"></script>
+</body>
+
+</html>

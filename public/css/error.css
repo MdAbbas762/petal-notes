@@ -1,0 +1,120 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #f5f1ec;
+    --card: #fcf9f7;
+    --border: #f0ddd6;
+    --text: #3b2a2a;
+    --muted: #b89a94;
+    --rose: #c97e82;
+    --rose-deep: #a85d62;
+    --blush: #f2c4c4;
+    --error-bg: #fff0f0;
+    --error-text: #a84040;
+    --error-border: #f5c6c6;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+    background-color: var(--bg);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 24px;
+    background-image:
+        radial-gradient(ellipse at 10% 10%, #faeaea 0%, transparent 55%),
+        radial-gradient(ellipse at 90% 90%, #fceee3 0%, transparent 55%);
+}
+
+.container {
+    text-align: center;
+    max-width: 420px;
+    width: 100%;
+}
+
+/* Icon */
+.icon-wrap {
+    width: 100px;
+    height: 100px;
+    background: var(--error-bg);
+    border: 1px solid var(--error-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+}
+
+.icon-wrap i {
+    font-size: 40px;
+    color: var(--error-text);
+}
+
+/* Text */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+/* Error message box */
+.error-message {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: var(--error-bg);
+    border: 1px solid var(--error-border);
+    border-radius: 12px;
+    padding: 12px 18px;
+    font-size: 13.5px;
+    color: var(--error-text);
+    margin-bottom: 32px;
+}
+
+.error-message i {
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+/* Button */
+.btn-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Jost', sans-serif;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(168, 93, 98, 0.3);
+    transition: opacity 0.2s, transform 0.15s;
+}
+
+.btn-home:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.btn-home:active {
+    transform: translateY(0);
+}
