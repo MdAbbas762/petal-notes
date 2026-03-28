@@ -2,13 +2,11 @@ require("dotenv").config();
 const app = require("./app");
 const connectDatabase = require("./config/db");
 
-console.log("DB URI at runtime:", process.env.DB_URI); // DEBUG
+console.log("DB URI at runtime:", process.env.DB_URI);
 
 async function startServer() {
   try {
-    await mongoose.connect(process.env.DB_URI, {
-      serverSelectionTimeoutMS: 5000
-    });
+    await connectDatabase();
 
     console.log("✅ MongoDB Connected");
 
@@ -20,7 +18,7 @@ async function startServer() {
 
   } catch (err) {
     console.error("❌ MongoDB Connection FAILED:", err.message);
-    process.exit(1); // stop app if DB fails
+    process.exit(1);
   }
 }
 
