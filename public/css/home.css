@@ -28,7 +28,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ── Navbar ── */
+/* Navbar */
 nav {
     position: fixed;
     top: 0;
@@ -201,7 +201,7 @@ nav {
     margin: 6px 0;
 }
 
-/* ── Sections — full screen height ── */
+/* Sections */
 section {
     min-height: 100vh;
     display: flex;
@@ -228,7 +228,7 @@ section {
     margin-bottom: 18px;
 }
 
-/* ── Hero ── */
+/* Hero */
 #home {
     background-image:
         radial-gradient(ellipse at 10% 20%, #faeaea 0%, transparent 50%),
@@ -322,7 +322,7 @@ section {
     width: 450px;
 }
 
-/* ── Features ── */
+/* Features */
 #features {
     background: var(--card);
     border-top: 1px solid var(--border);
@@ -419,7 +419,7 @@ section {
     color: var(--rose);
 }
 
-/* ── About ── */
+/* About */
 #about {
     background-image:
         radial-gradient(ellipse at 90% 10%, #faeaea 0%, transparent 50%),
@@ -478,7 +478,7 @@ section {
     background-clip: text;
 }
 
-/* ── Footer ── */
+/* Footer */
 footer {
     background: #3b2a2a;
     padding: 44px 60px;
@@ -548,7 +548,7 @@ footer {
     color: #7a5c56;
 }
 
-/* ── Responsive ── */
+/* Responsive */
 @media (max-width: 900px) {
     nav {
         padding: 0 24px;
@@ -647,13 +647,8 @@ footer {
     }
 }
 
-@media (min-width: 901px) { /* desktop */
-    .nav-links,
-    .nav-auth {
-        display: flex !important;
-    }
-
-    .hamburger {
-        display: none !important;
+@media (max-width: 395px) {
+    section {
+        padding: 68px 14px 0;
     }
 }
