@@ -4,6 +4,15 @@ A simple yet powerful note-taking solution built to streamline everyday note man
 
 ---  
 
+## 🌐 Live Demo
+
+🚀 Experience the app live:  
+👉 **[Open Petal Notes](https://petal-notes-production.up.railway.app)**  
+
+> ⚠️ Note: The app may take a few seconds to load initially (free hosting).
+
+--- 
+
 ## 📌 1. Project Overview  
 
 **Petal Notes** is a full-stack web application that allows users to create, manage, organize, and store their personal notes efficiently. The application provides a clean and modern interface combined with a robust backend system supporting features like soft delete (trash), pinning, categorization, and search. It is built using a server-rendered architecture with a strong focus on clean code, scalability, and real-world backend practices.  
