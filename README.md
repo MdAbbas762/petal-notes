@@ -35,8 +35,6 @@ A simple yet powerful note-taking solution built to streamline everyday note man
 - Sidebar navigation with clearly organized sections and collections  
 - Dynamic greeting messages on the dashboard for better user experience  
 
----
-
 #### 📝 Notes Display  
 - Grid-based layout for structured note visualization  
 - Each note displays:
@@ -46,8 +44,6 @@ A simple yet powerful note-taking solution built to streamline everyday note man
   - Last updated date  
 - Hover-based action controls for quick interactions (Edit, Delete, Pin)  
 
----
-
 #### 📂 Category Filtering  
 - Dedicated pages for:
   - Work  
@@ -56,15 +52,11 @@ A simple yet powerful note-taking solution built to streamline everyday note man
 - Displays only notes belonging to the selected category  
 - Helps users organize and quickly access relevant notes  
 
----
-
 #### 📌 Pin System (UI)  
 - Notes can be pinned/unpinned directly from the UI  
 - Pinned notes are visually highlighted  
 - Automatically moved to the top of the list  
 - Dedicated **Pinned Notes page** for quick access to important notes  
-
----
 
 #### 🗑️ Trash & Restore System (UI)  
 - Soft delete functionality (notes are not immediately removed)  
@@ -74,15 +66,11 @@ A simple yet powerful note-taking solution built to streamline everyday note man
   - ❌ Permanently delete notes  
 - Clear visual distinction between active and trashed notes  
 
----
-
 #### 🔍 Search Feature (UI)  
 - Search bar available on dashboard  
 - Instantly filters notes based on user input  
 - Displays matching results dynamically  
 - Shows a user-friendly message when no results are found  
-
----
 
 #### ⚠️ Error Handling (UI)  
 - Inline error messages for form validation  
@@ -99,8 +87,6 @@ A simple yet powerful note-taking solution built to streamline everyday note man
 - Session-based authentication system  
 - Route protection using authentication middleware  
 
----
-
 #### 🧠 Notes Management (CRUD)  
 - Create new notes  
 - Read/view notes across different pages  
@@ -108,15 +94,11 @@ A simple yet powerful note-taking solution built to streamline everyday note man
 - Soft delete (move to trash)  
 - Permanently delete notes from database  
 
----
-
 #### 🗑️ Soft Delete & Restore Logic  
 - Notes are not deleted immediately — marked using `isTrashed` flag  
 - Enables recovery of accidentally deleted notes  
 - Restore operation moves notes back to active state  
 - Permanent deletion removes notes completely from database  
-
----
 
 #### 📌 Pinning Logic  
 - Toggle pin/unpin functionality  
@@ -125,14 +107,10 @@ A simple yet powerful note-taking solution built to streamline everyday note man
   - Remaining notes sorted by latest creation date  
 - Maintains intuitive and consistent ordering  
 
----
-
 #### 📂 Category Filtering (Backend)  
 - Efficient query-based filtering using MongoDB  
 - Retrieves notes based on selected category  
 - Ensures only relevant notes are returned per request  
-
----
 
 #### 🔍 Search Functionality  
 - Search across:
@@ -141,14 +119,10 @@ A simple yet powerful note-taking solution built to streamline everyday note man
 - Case-insensitive matching using RegEx  
 - Integrated within dashboard route for seamless experience  
 
----
-
 #### 🔁 Dynamic Redirect System  
 - After actions (edit, delete, pin), user is redirected back to the same page  
 - Maintains context (e.g., category page, pinned page)  
 - Implemented using `redirectTo` query parameter  
-
----
 
 #### ⚠️ Centralized Error Handling  
 - Custom `AppError` class for structured errors  
@@ -377,10 +351,10 @@ http://localhost:3000
 ### 📱 Responsive Design
 
 #### 🏠 Mobile Home Page View
-![Mobile Home](./screenshots/17-mobile-view-home-page.PNG)
+![Mobile Home](./screenshots/18-mobile-view-home-page.PNG)
 
 #### 📊 Mobile Dashboard View
-![Mobile Dashboard](./screenshots/18-mobile-view-dashboard.PNG)
+![Mobile Dashboard](./screenshots/19-mobile-view-dashboard.PNG)
 
 ---  
 
