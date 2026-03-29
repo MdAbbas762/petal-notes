@@ -37,7 +37,7 @@ body {
         radial-gradient(ellipse at 10% 90%, #fceee3 0%, transparent 45%);
 }
 
-/* ── Sidebar (desktop) ── */
+/* Sidebar (desktop) */
 .sidebar {
     width: 240px;
     min-height: 100vh;
@@ -190,7 +190,7 @@ body {
     color: var(--sidebar-muted);
 }
 
-/* ── Mobile Drawer ── */
+/* Mobile Drawer */
 .drawer-overlay {
     display: none;
     position: fixed;
@@ -249,7 +249,7 @@ body {
     color: #f5f1ec;
 }
 
-/* ── Main ── */
+/* Main */
 .main {
     flex: 1;
     display: flex;
@@ -258,7 +258,7 @@ body {
     overflow: hidden;
 }
 
-/* ── Topbar ── */
+/* Topbar */
 .topbar {
     display: flex;
     align-items: center;
@@ -300,6 +300,13 @@ body {
     font-size: 22px;
     font-weight: 600;
     color: var(--text);
+}
+
+.topbar-main, .topbar-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .search-bar {
@@ -371,14 +378,14 @@ body {
     transform: translateY(0);
 }
 
-/* ── Content ── */
+/* Content */
 .content {
     padding: 30px 25px;
     flex: 1;
     height: 100vh;
 }
 
-/* ── Notes Count Banner ── */
+/* Notes Count Banner */
 .notes-banner {
     width: 100%;
     display: inline-flex;
@@ -431,7 +438,7 @@ body {
     margin-right: 4px;
 }
 
-/* ── Section Header ── */
+/* Section Header */
 .section-header {
     display: flex;
     align-items: center;
@@ -457,7 +464,7 @@ body {
     text-decoration: underline;
 }
 
-/* ── Filter Tabs ── */
+/* Filter Tabs */
 .filter-tabs {
     display: flex;
     gap: 6px;
@@ -489,7 +496,7 @@ body {
     color: var(--rose);
 }
 
-/* ── Notes Grid ── */
+/* Notes Grid */
 .notes-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -696,7 +703,7 @@ body {
     margin: 150px 10px 0 0;
 }
 
-.work-img {
+.work-img, .personal-img, .ideas-img {
     width: 400px;
     margin: 120px 10px 0 0;
 }
@@ -842,26 +849,22 @@ body {
     transform: translateY(0);
 }
 
-/* ── Responsive ── */
-@media (max-width: 1100px) {
-    .notes-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 769px) and (max-width: 834px) {
-    .topbar {
+/* Responsiveness */
+@media (min-width: 769px) and (max-width: 990px) {
+    .dashboard-topbar {
         flex-direction: column;
     }
 
     .search-bar {
         margin-left: 0;
     }
+
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
-
-    /* Hide desktop sidebar, show hamburger */
     .sidebar {
         display: none;
     }
@@ -872,10 +875,25 @@ body {
 
     .topbar {
         padding: 16px 20px;
+        justify-content: space-between;
+    }
+
+    .dashboard-topbar {
+        flex-direction: column;
     }
 
     .topbar-title {
         font-size: 18px;
+        flex: 1;
+    }
+
+    .dashboard-title {
+        text-align: center;
+    }
+
+    .search-bar {
+        margin-left: 0;
+        flex: 1;
     }
 
     .search-bar input {
@@ -887,35 +905,47 @@ body {
     }
 
     .notes-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        grid-template-columns: 1fr;
+    }
+    
+    .searchForm input {
+        width: 100%;
+        max-width: none;
+    }
+    
+    .btn-new span {
+        display: none;
+    }
+
+    .empty-state h1 {
+        font-size: 23px;
+        text-align: center;
+    }
+    
+    .empty-state p {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .empty-state-img {
+        width: 350px;
+    }
+
+    .dashboard-img {
+        width: 220px;
+    }
+
+    .pinned-state-img {
+        width: 376px;
+    }
+
+    .trash-img {
+        width: 270px;
     }
 }
 
-@media (min-width: 445px) and (max-width: 520px) {
-    .notes-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .search-bar {
-        margin-left: 0;
-        flex: 1;
-    }
-
-    .search-bar input {
-        width: 100%;
-    }
-
-    .topbar {
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .topbar-title {
-        flex: 1;
-    }
-
-    .btn-new span {
-        display: none;
+@media (max-width: 394px) {
+    .modal-actions {
+        flex-direction: column;
     }
 }

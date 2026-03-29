@@ -96,35 +96,41 @@
     <div class="main">
 
         <!-- Topbar -->
-        <header class="topbar">
+        <header class="topbar dashboard-topbar">
         
-            <button class="hamburger" onclick="openDrawer()">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-
-            <% 
-                const messages = ["Ready when you are ✨", "Turn thought into words ✍️", "Good to have you ☀️", "Unload your mind 🤯", "Another thought today? 🤔", "Let thoughts land 🕊️", "Capture what matters 📜"];
-                const index = Math.floor(Math.random() * messages.length); 
-            %>
-
-            <div class="topbar-title"><%= messages[index] %> </div>
-
-            <div class="search-bar">
-                <i class="fa-solid fa-search"></i>
-
-                <form action="/petal/notes/dashboard" method="GET" class="searchForm">
-                    <input type="text" name="search" value="<%= searchQuery? searchQuery: "" %>" placeholder="Search notes...">
-                </form>
-
-                <% if (searchQuery) { %>
-                    <a href="/petal/notes/dashboard" class="remove-search-btn"><i class="fa-solid fa-x"></i></a>
-                <% } %>
+            <div class="topbar-main">
+                <button class="hamburger" onclick="openDrawer()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+        
+                <% 
+                    const messages=["Ready when you are ✨", "Turn thought into words ✍️" , "Good to have you ☀️", "Unload your mind 🤯" , "Another thought today? 🤔" , "Let thoughts land 🕊️" , "Capture what matters 📜"]; 
+                    const index=Math.floor(Math.random() * messages.length); 
+                %>
+        
+                <div class="topbar-title dashboard-title">
+                    <%= messages[index] %>
+                </div>
             </div>
-
-            <% if (hasNotes) { %>
-                <a href="/petal/notes/new" class="btn-new"><i class="fa-solid fa-plus"></i> <span>New Note</span></a>
-            <% }%>
-
+        
+            <div class="topbar-actions">
+                <div class="search-bar">
+                    <i class="fa-solid fa-search"></i>
+            
+                    <form action="/petal/notes/dashboard" method="GET" class="searchForm">
+                        <input type="text" name="search" value="<%= searchQuery? searchQuery: "" %>" placeholder="Search notes...">
+                    </form>
+            
+                    <% if (searchQuery) { %>
+                        <a href="/petal/notes/dashboard" class="remove-search-btn"><i class="fa-solid fa-x"></i></a>
+                    <% } %>
+                </div>
+            
+                <% if (hasNotes) { %>
+                    <a href="/petal/notes/new" class="btn-new"><i class="fa-solid fa-plus"></i> <span>New Note</span></a>
+                <% }%>
+            </div>
+        
         </header>
 
         <!-- Content -->
