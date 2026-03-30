@@ -578,7 +578,7 @@ footer {
     }
 
     .hero-text h1 {
-        font-size: 36px;
+        font-size: 40px;
     }
 
     .hero-text p {
@@ -633,7 +633,11 @@ footer {
 
 @media (max-width: 520px) {
     .hero-text h1 {
-        font-size: 28px;
+        font-size: 32px;
+    }
+
+    .hero-text p {
+        font-size: 15px;
     }
 
     .hero-actions {
@@ -650,5 +654,11 @@ footer {
 @media (max-width: 395px) {
     section {
         padding: 68px 14px 0;
+    }
+}
+
+@media (max-width: 380px) {
+    section {
+        padding: 68px 4px 0;
     }
 }
