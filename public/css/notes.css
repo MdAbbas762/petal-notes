@@ -915,6 +915,10 @@ body {
         width: 225px;
     }
 
+    .personal-img {
+        margin-left: 5px;
+    }
+
     .pinned-state-img {
         width: 375px;
     }
