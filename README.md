@@ -4,14 +4,11 @@ A simple yet powerful note-taking solution built to streamline everyday note man
 
 ---  
 
-## 🌐 Live Demo  
+## 🎥 Project Demo  
 
-🚀 Experience the app live:  
-👉 **[Open Petal Notes](https://petal-notes-production.up.railway.app)**  
+[![Watch Demo](https://img.shields.io/badge/Watch-Demo-blue?style=for-the-badge)](https://drive.google.com/file/d/1iCss4k4Z-QkT2kTvk80seIkExNuvhTi9/preview)  
 
-> ⚠️ Note: The app may take a few seconds to load initially (free hosting).  
-
----   
+---  
 
 ## 📌 1. Project Overview  
 
